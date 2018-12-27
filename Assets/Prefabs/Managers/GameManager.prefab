@@ -61,6 +61,8 @@ MonoBehaviour:
   GameObjectsContainer: {fileID: 0}
   FieldViewPrefab: {fileID: 114062616049703276, guid: 09ec1ce5607aaeb4db5073d926f80c57,
     type: 3}
+  BrickViewPrefab: {fileID: 3262898704641736236, guid: 089c39c78322a5f4abb4c8aa1b67ed20,
+    type: 3}
   RacketViewPrefab: {fileID: 114196323164399432, guid: e44b4dd5c45ec224a89d3f6b239f7ff3,
     type: 3}
   BallViewPrefab: {fileID: 114078603773449410, guid: 98a1b2527b481844b8afc3e6878e43d7,

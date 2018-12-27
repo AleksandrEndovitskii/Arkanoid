@@ -1,4 +1,5 @@
 ﻿using GameObjects.Ball;
+using GameObjects.Brick;
 using GameObjects.Field;
 using GameObjects.Racket;
 using UnityEngine;
@@ -10,23 +11,27 @@ namespace Managers
         public Transform GameObjectsContainer;
 
         public FieldView FieldViewPrefab;
+        public BrickView BrickViewPrefab;
         public RacketView RacketViewPrefab;
         public BallView BallViewPrefab;
 
         private FieldView _fieldViewInstance;
+        private BrickView _brickViewInstance;
         private RacketView _racketViewInstance;
         private BallView _ballViewInstance;
 
         public void Initialize()
         {
-            _fieldViewInstance = InstantiateElement(FieldViewPrefab, GameObjectsContainer).GetComponent<FieldView>();
+            _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
-            _racketViewInstance = InstantiateElement(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
+            _brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, 4.5f, 0));
 
-            _ballViewInstance = InstantiateElement(BallViewPrefab, _fieldViewInstance.gameObject.transform).GetComponent<BallView>();
+            _racketViewInstance = InstantiateElement<RacketView>(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
+
+            _ballViewInstance = InstantiateElement<BallView>(BallViewPrefab, _fieldViewInstance.gameObject.transform);
         }
 
-        private MonoBehaviour InstantiateElement(MonoBehaviour prefab, Transform parentContainer)
+        private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour
         {
             var instance = Instantiate(prefab);
 
@@ -35,9 +40,9 @@ namespace Managers
             return instance;
         }
 
-        private RacketView InstantiateElement(RacketView prefab, Transform parentContainer, Vector3 position)
+        private T InstantiateElement<T>(T prefab, Transform parentContainer, Vector3 position) where T : MonoBehaviour
         {
-            var instance = InstantiateElement(prefab, parentContainer).GetComponent<RacketView>();
+            var instance = InstantiateElement<T>(prefab, _fieldViewInstance.gameObject.transform);
 
             instance.transform.position = position;
 
