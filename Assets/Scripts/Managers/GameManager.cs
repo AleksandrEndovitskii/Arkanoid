@@ -5,8 +5,6 @@
     Задача: разбить кирпич, находящийся в произвольном месте.
     Кирпичи могут быть разных видов, в зависимости от вида требуется k попаданий шариком для уничтожения кирпича.
     Каждые n секунд, кирпичи опускаются на одну ячейку вниз;
-    В случае, если шарик касается нижней границы экрана, игра считается проигранной.
-    В случае, если все кирпичи уничтожены, игра считается выигранной;
 
 Бонусные задачи:
     - Написать шейдер, уводящий цвет кирпича в красный по мере приближения к нижней границе экрана.
@@ -18,6 +16,7 @@ namespace Managers
 {
     [RequireComponent(typeof(UserInterfaceManager))]
     [RequireComponent(typeof(GameObjectsManager))]
+    [RequireComponent(typeof(GameFlowManager))]
     public class GameManager : MonoBehaviour
     {
         // static instance of GameManager which allows it to be accessed by any other script 
@@ -31,6 +30,11 @@ namespace Managers
         public GameObjectsManager GameObjectsManager
         {
             get { return this.gameObject.GetComponent<GameObjectsManager>(); }
+        }
+
+        public GameFlowManager GameFlowManager
+        {
+            get { return this.gameObject.GetComponent<GameFlowManager>(); }
         }
 
         private void Awake()
@@ -57,6 +61,7 @@ namespace Managers
         {
             UserInterfaceManager.Initialize();
             GameObjectsManager.Initialize();
+            GameFlowManager.Initialize();
         }
     }
 }
