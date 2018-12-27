@@ -129,7 +129,7 @@ MonoBehaviour:
   enablePickOverUI: 0
   resetPhysic: 0
   directAction: 0
-  axesAction: 3
+  axesAction: 0
   sensibility: 1
   directCharacterController: {fileID: 0}
   inverseAxisValue: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: HedgehogTeam.EasyTouch.QuickDrag+OnDragEnd, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  isStopOncollisionEnter: 0
+  isStopOncollisionEnter: 1
 --- !u!114 &114196323164399432
 MonoBehaviour:
   m_ObjectHideFlags: 0
