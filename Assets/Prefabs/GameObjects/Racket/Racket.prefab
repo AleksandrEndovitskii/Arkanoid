@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23588222780959708}
   - component: {fileID: 65710575711773300}
   - component: {fileID: 54042721833283212}
+  - component: {fileID: 8109648215296341749}
   - component: {fileID: 114196323164399432}
   m_Layer: 0
   m_Name: Racket
@@ -109,6 +110,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &8109648215296341749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773085586098734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7961076ef9aef0341b2c9f8a38bfbc71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quickActionName: QuickDrage27d641
+  isMultiTouch: 0
+  is2Finger: 0
+  isOnTouch: 0
+  enablePickOverUI: 0
+  resetPhysic: 0
+  directAction: 0
+  axesAction: 3
+  sensibility: 1
+  directCharacterController: {fileID: 0}
+  inverseAxisValue: 0
+  onDragStart:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HedgehogTeam.EasyTouch.QuickDrag+OnDragStart, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HedgehogTeam.EasyTouch.QuickDrag+OnDrag, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDragEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HedgehogTeam.EasyTouch.QuickDrag+OnDragEnd, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  isStopOncollisionEnter: 0
 --- !u!114 &114196323164399432
 MonoBehaviour:
   m_ObjectHideFlags: 0
