@@ -19,6 +19,7 @@
 namespace Managers
 {
     [RequireComponent(typeof(UserInterfaceManager))]
+    [RequireComponent(typeof(GameObjectsManager))]
     public class GameManager : MonoBehaviour
     {
         // static instance of GameManager which allows it to be accessed by any other script 
@@ -27,6 +28,11 @@ namespace Managers
         public UserInterfaceManager UserInterfaceManager
         {
             get { return this.gameObject.GetComponent<UserInterfaceManager>(); }
+        }
+
+        public GameObjectsManager GameObjectsManager
+        {
+            get { return this.gameObject.GetComponent<GameObjectsManager>(); }
         }
 
         private void Awake()
@@ -52,6 +58,7 @@ namespace Managers
         private void Initialization()
         {
             UserInterfaceManager.Initialize();
+            GameObjectsManager.Initialize();
         }
     }
 }
