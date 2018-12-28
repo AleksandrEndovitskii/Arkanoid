@@ -1,16 +1,15 @@
 ﻿using GameObjects.Ball;
+using Managers;
 using UnityEngine;
 
 namespace GameObjects.Field
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class GateWallView : WallView
+    public class GateWallView : WallView, IBallOnCollisionEnterReactor
     {
-        public override void ReactOnCollisionEnter(BallView ballView)
+        public void ReactOnCollisionEnter(BallView ballView)
         {
-            base.ReactOnCollisionEnter(ballView);
-
-            //ballView.LaunchBall();
+            GameManager.Instance.GameFlowManager.GameLost();
         }
     }
 }

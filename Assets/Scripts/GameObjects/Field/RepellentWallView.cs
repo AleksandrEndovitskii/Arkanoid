@@ -4,13 +4,11 @@ using UnityEngine;
 namespace GameObjects.Field
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class RepellentWallView : WallView
+    public class RepellentWallView : WallView, IBallOnCollisionEnterReactor
     {
-        public override void ReactOnCollisionEnter(BallView ballView)
+        public void ReactOnCollisionEnter(BallView ballView)
         {
-            base.ReactOnCollisionEnter(ballView);
-
-            //ballView.BounceInOppositeDirection();
+            ballView.BounceInOppositeDirection();
         }
     }
 }

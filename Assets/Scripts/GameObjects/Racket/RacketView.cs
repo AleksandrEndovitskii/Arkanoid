@@ -1,13 +1,13 @@
-﻿using UnityEngine;
-
-/*
-бита, которой мы управляем влево-вправо
- */
+﻿using GameObjects.Ball;
+using UnityEngine;
 
 namespace GameObjects.Racket
 {
-    public class RacketView : MonoBehaviour
+    public class RacketView : MonoBehaviour, IBallOnCollisionEnterReactor
     {
-
+        public void ReactOnCollisionEnter(BallView ballView)
+        {
+            ballView.BounceInOppositeDirection();
+        }
     }
 }
