@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 219906263611629875}
   - component: {fileID: 3331874053925807727}
   - component: {fileID: 5231317017847866611}
+  - component: {fileID: 5644873087216206018}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -118,3 +119,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SecondsPassedCountRequaredForBrickMovement: 10
+--- !u!114 &5644873087216206018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324678135730088090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096adae7fe1ede488dd4d7892d6d90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrickTypesHealths:
+  - BrickType: 0
+    Health: 1
+  - BrickType: 1
+    Health: 2
+  - BrickType: 2
+    Health: 3
+  - BrickType: 3
+    Health: 4
+  - BrickType: 4
+    Health: 5
+  - BrickType: 5
+    Health: 6
+  - BrickType: 6
+    Health: 7
