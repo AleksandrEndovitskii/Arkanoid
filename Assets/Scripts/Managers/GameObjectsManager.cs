@@ -9,6 +9,7 @@ namespace Managers
     public class GameObjectsManager : MonoBehaviour
     {
         public Transform GameObjectsContainer;
+        public Canvas UserInterfaceCanvas;
 
         public FieldView FieldViewPrefab;
         public BrickView BrickViewPrefab;
