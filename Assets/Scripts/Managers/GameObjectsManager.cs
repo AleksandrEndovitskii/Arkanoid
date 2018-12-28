@@ -9,7 +9,6 @@ namespace Managers
     public class GameObjectsManager : MonoBehaviour
     {
         public Transform GameObjectsContainer;
-        public Canvas UserInterfaceCanvas;
 
         public FieldView FieldViewPrefab;
         public BrickView BrickViewPrefab;
@@ -43,7 +42,7 @@ namespace Managers
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer, Vector3 position) where T : MonoBehaviour
         {
-            var instance = InstantiateElement<T>(prefab, _fieldViewInstance.gameObject.transform);
+            var instance = InstantiateElement<T>(prefab, parentContainer);
 
             instance.transform.position = position;
 

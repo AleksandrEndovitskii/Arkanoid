@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 1450295499}
   - component: {fileID: 1450295498}
   - component: {fileID: 1450295497}
+  - component: {fileID: 1450295501}
   m_Layer: 5
   m_Name: UserInterfaceCanvas
   m_TagString: Untagged
@@ -388,6 +389,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1450295501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450295496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
 --- !u!1 &1480875505
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +563,17 @@ PrefabInstance:
       propertyPath: UserInterfaceCanvas
       value: 
       objectReference: {fileID: 1450295499}
+    - target: {fileID: 5361834537064907592, guid: 62242f1a4d6e9bc42afa012a5f7bf7cc,
+        type: 3}
+      propertyPath: UserInterfaceCanvas
+      value: 
+      objectReference: {fileID: 1450295499}
+    - target: {fileID: 5361834537064907592, guid: 62242f1a4d6e9bc42afa012a5f7bf7cc,
+        type: 3}
+      propertyPath: UserInterfaceViewPrefab
+      value: 
+      objectReference: {fileID: 4660584369592988944, guid: fd0066ca9192aab47b3a2b8d14800a3b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62242f1a4d6e9bc42afa012a5f7bf7cc, type: 3}
 --- !u!1 &5730649931683371402 stripped
