@@ -18,6 +18,7 @@ namespace Managers
     [RequireComponent(typeof(TimeManager))]
     [RequireComponent(typeof(BrickMovementManager))]
     [RequireComponent(typeof(BrickHealthManager))]
+    [RequireComponent(typeof(ScoreManager))]
     public class GameManager : MonoBehaviour
     {
         // static instance of GameManager which allows it to be accessed by any other script 
@@ -53,6 +54,11 @@ namespace Managers
             get { return this.gameObject.GetComponent<BrickHealthManager>(); }
         }
 
+        public ScoreManager ScoreManager
+        {
+            get { return this.gameObject.GetComponent<ScoreManager>(); }
+        }
+
         private void Awake()
         {
             if (Instance == null)
@@ -81,6 +87,7 @@ namespace Managers
             TimeManager.Initialize();
             BrickMovementManager.Initialize();
             BrickHealthManager.Initialize();
+            ScoreManager.Initialize();
         }
     }
 }

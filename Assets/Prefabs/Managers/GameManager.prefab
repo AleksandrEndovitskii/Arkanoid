@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3331874053925807727}
   - component: {fileID: 5231317017847866611}
   - component: {fileID: 5644873087216206018}
+  - component: {fileID: 1000577929258581653}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameObjectsContainer: {fileID: 0}
+  UserInterfaceCanvas: {fileID: 0}
   FieldViewPrefab: {fileID: 114062616049703276, guid: 09ec1ce5607aaeb4db5073d926f80c57,
     type: 3}
   BrickViewPrefab: {fileID: 3262898704641736236, guid: 089c39c78322a5f4abb4c8aa1b67ed20,
@@ -146,3 +148,15 @@ MonoBehaviour:
     Health: 6
   - BrickType: 6
     Health: 7
+--- !u!114 &1000577929258581653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324678135730088090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133bff3f59532654394470ce7f9a7056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
