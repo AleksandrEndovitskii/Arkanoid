@@ -15,6 +15,7 @@ namespace Managers
     [RequireComponent(typeof(UserInterfaceManager))]
     [RequireComponent(typeof(GameObjectsManager))]
     [RequireComponent(typeof(GameFlowManager))]
+    [RequireComponent(typeof(TimeManager))]
     public class GameManager : MonoBehaviour
     {
         // static instance of GameManager which allows it to be accessed by any other script 
@@ -33,6 +34,11 @@ namespace Managers
         public GameFlowManager GameFlowManager
         {
             get { return this.gameObject.GetComponent<GameFlowManager>(); }
+        }
+
+        public TimeManager TimeManager
+        {
+            get { return this.gameObject.GetComponent<TimeManager>(); }
         }
 
         private void Awake()
@@ -60,6 +66,7 @@ namespace Managers
             UserInterfaceManager.Initialize();
             GameObjectsManager.Initialize();
             GameFlowManager.Initialize();
+            TimeManager.Initialize();
         }
     }
 }
