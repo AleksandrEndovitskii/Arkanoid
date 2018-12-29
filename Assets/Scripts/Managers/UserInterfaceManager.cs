@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UserInterface;
 using Utilities;
 
@@ -22,11 +22,13 @@ namespace Managers
             _userInterfaceViewInstance = InstantiateElement<UserInterfaceView>(UserInterfaceViewPrefab, UserInterfaceCanvas.transform);
         }
 
-        private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour
+        private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour, IInitializable
         {
             var instance = Instantiate(prefab);
 
             instance.gameObject.transform.SetParent(parentContainer);
+
+            instance.Initialize();
 
             return instance;
         }
