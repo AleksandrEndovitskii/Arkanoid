@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using GameObjects.Brick;
 using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
-    public class BrickHealthManager : MonoBehaviour
+    public class BrickHealthManager : MonoBehaviour, IInitializable
     {
         [Serializable]
         public class BrickTypeHealth

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
-    public class BrickMovementManager : MonoBehaviour
+    public class BrickMovementManager : MonoBehaviour, IInitializable
     {
         public int SecondsPassedCountRequaredForBrickMovement = 10;
 

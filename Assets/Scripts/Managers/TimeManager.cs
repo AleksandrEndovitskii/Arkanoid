@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
-    public class TimeManager : MonoBehaviour
+    public class TimeManager : MonoBehaviour, IInitializable
     {
         public event Action<int> SecondsPassedCountChanged = delegate { };
 

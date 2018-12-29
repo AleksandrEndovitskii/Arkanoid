@@ -1,9 +1,10 @@
 ﻿using Managers;
 using UnityEngine;
+using Utilities;
 
 namespace UserInterface
 {
-    public class UserInterfaceView : MonoBehaviour
+    public class UserInterfaceView : MonoBehaviour, IInitializable
     {
         public CounterView ScoreCounterView;
         public CounterView SecondsBeforeNextBricksMovementTimerCounterView;

@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UserInterface;
+using Utilities;
 
 /*
 UI:
@@ -8,7 +9,7 @@ UI:
 
 namespace Managers
 {
-    public class UserInterfaceManager : MonoBehaviour
+    public class UserInterfaceManager : MonoBehaviour, IInitializable
     {
         public Canvas UserInterfaceCanvas;
 

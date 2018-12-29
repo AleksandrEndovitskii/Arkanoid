@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
-    public class ScoreManager : MonoBehaviour
+    public class ScoreManager : MonoBehaviour, IInitializable
     {
         public event Action<int> ScoreChanged = delegate { };
 

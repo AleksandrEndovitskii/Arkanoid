@@ -3,10 +3,11 @@ using GameObjects.Brick;
 using GameObjects.Field;
 using GameObjects.Racket;
 using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
-    public class GameObjectsManager : MonoBehaviour
+    public class GameObjectsManager : MonoBehaviour, IInitializable
     {
         public Transform GameObjectsContainer;
 

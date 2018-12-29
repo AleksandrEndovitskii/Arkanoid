@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utilities;
 
 /*
 Геймплей:
@@ -19,7 +20,7 @@ namespace Managers
     [RequireComponent(typeof(BrickMovementManager))]
     [RequireComponent(typeof(BrickHealthManager))]
     [RequireComponent(typeof(ScoreManager))]
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IInitializable
     {
         // static instance of GameManager which allows it to be accessed by any other script 
         public static GameManager Instance;
@@ -76,10 +77,10 @@ namespace Managers
                 }
             }
 
-            Initialization();
+            Initialize();
         }
 
-        private void Initialization()
+        public void Initialize()
         {
             UserInterfaceManager.Initialize();
             GameObjectsManager.Initialize();
