@@ -11,11 +11,13 @@ namespace Managers
     {
         public Transform GameObjectsContainer;
 
+        public BricksContainerView BricksContainerPrefab;
         public FieldView FieldViewPrefab;
         public BrickView BrickViewPrefab;
         public RacketView RacketViewPrefab;
         public BallView BallViewPrefab;
 
+        private BricksContainerView _bricksContainerInstance;
         private FieldView _fieldViewInstance;
         private BrickView _brickViewInstance;
         private RacketView _racketViewInstance;
@@ -25,7 +27,8 @@ namespace Managers
         {
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
-            _brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, 4f, 0));
+            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 4f, 0));
+            _brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _bricksContainerInstance.transform);
 
             _racketViewInstance = InstantiateElement<RacketView>(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
 
