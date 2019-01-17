@@ -5,7 +5,7 @@ using Utilities;
 
 namespace Managers
 {
-    public class TimeManager : MonoBehaviour, IInitializable
+    public class TimeManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public event Action<int> SecondsPassedCountChanged = delegate { };
 
@@ -27,6 +27,11 @@ namespace Managers
         public void Initialize()
         {
             StartCoroutine(Stopwatch());
+        }
+
+        public void Uninitialize()
+        {
+            //
         }
 
         private IEnumerator Stopwatch()

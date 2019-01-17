@@ -7,7 +7,7 @@ using Utilities;
 
 namespace Managers
 {
-    public class GameObjectsManager : MonoBehaviour, IInitializable
+    public class GameObjectsManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public Transform GameObjectsContainer;
 
@@ -33,6 +33,11 @@ namespace Managers
             _racketViewInstance = InstantiateElement<RacketView>(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
 
             _ballViewInstance = InstantiateElement<BallView>(BallViewPrefab, _fieldViewInstance.gameObject.transform);
+        }
+
+        public void Uninitialize()
+        {
+            //
         }
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour

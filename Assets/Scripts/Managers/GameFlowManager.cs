@@ -7,9 +7,14 @@ using Utilities;
 
 namespace Managers
 {
-    public class GameFlowManager : MonoBehaviour, IInitializable
+    public class GameFlowManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public void Initialize()
+        {
+            //
+        }
+
+        public void Uninitialize()
         {
             //
         }

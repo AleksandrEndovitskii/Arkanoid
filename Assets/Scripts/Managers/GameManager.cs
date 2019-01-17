@@ -20,7 +20,7 @@ namespace Managers
     [RequireComponent(typeof(BrickMovementManager))]
     [RequireComponent(typeof(BrickHealthManager))]
     [RequireComponent(typeof(ScoreManager))]
-    public class GameManager : MonoBehaviour, IInitializable
+    public class GameManager : MonoBehaviour, IInitializable, IUninitializable
     {
         // static instance of GameManager which allows it to be accessed by any other script 
         public static GameManager Instance;
@@ -89,6 +89,17 @@ namespace Managers
             BrickMovementManager.Initialize();
             BrickHealthManager.Initialize();
             ScoreManager.Initialize();
+        }
+
+        public void Uninitialize()
+        {
+            UserInterfaceManager.Uninitialize();
+            GameObjectsManager.Uninitialize();
+            GameFlowManager.Uninitialize();
+            TimeManager.Uninitialize();
+            BrickMovementManager.Uninitialize();
+            BrickHealthManager.Uninitialize();
+            ScoreManager.Uninitialize();
         }
     }
 }

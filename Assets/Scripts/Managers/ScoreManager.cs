@@ -4,7 +4,7 @@ using Utilities;
 
 namespace Managers
 {
-    public class ScoreManager : MonoBehaviour, IInitializable
+    public class ScoreManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public event Action<int> ScoreChanged = delegate { };
 
@@ -24,6 +24,11 @@ namespace Managers
         }
 
         public void Initialize()
+        {
+            //
+        }
+
+        public void Uninitialize()
         {
             //
         }

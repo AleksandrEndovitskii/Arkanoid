@@ -3,13 +3,18 @@ using Utilities;
 
 namespace Managers
 {
-    public class BrickMovementManager : MonoBehaviour, IInitializable
+    public class BrickMovementManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public int SecondsPassedCountRequaredForBrickMovement = 10;
 
         public void Initialize()
         {
             GameManager.Instance.TimeManager.SecondsPassedCountChanged += TimeManagerOnSecondsPassedCountChanged;
+        }
+
+        public void Uninitialize()
+        {
+            //
         }
 
         private void TimeManagerOnSecondsPassedCountChanged(int secondsPassedCount)

@@ -7,7 +7,7 @@ using Utilities;
 
 namespace Managers
 {
-    public class BrickHealthManager : MonoBehaviour, IInitializable
+    public class BrickHealthManager : MonoBehaviour, IInitializable, IUninitializable
     {
         [Serializable]
         public class BrickTypeHealth
@@ -19,6 +19,11 @@ namespace Managers
         public List<BrickTypeHealth> BrickTypesHealths = new List<BrickTypeHealth>();
 
         public void Initialize()
+        {
+            //
+        }
+
+        public void Uninitialize()
         {
             //
         }

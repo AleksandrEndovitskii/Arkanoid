@@ -9,7 +9,7 @@ UI:
 
 namespace Managers
 {
-    public class UserInterfaceManager : MonoBehaviour, IInitializable
+    public class UserInterfaceManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public Canvas UserInterfaceCanvas;
 
@@ -23,6 +23,11 @@ namespace Managers
         {
             _userInterfaceViewInstance = InstantiateElement<UserInterfaceView>(UserInterfaceViewPrefab, UserInterfaceCanvas.transform);
             //_gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, UserInterfaceCanvas.transform);
+        }
+
+        public void Uninitialize()
+        {
+            //
         }
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour, IInitializable
