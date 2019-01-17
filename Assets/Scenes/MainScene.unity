@@ -580,6 +580,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4660584369592988944, guid: fd0066ca9192aab47b3a2b8d14800a3b,
         type: 3}
+    - target: {fileID: 5361834537064907592, guid: 62242f1a4d6e9bc42afa012a5f7bf7cc,
+        type: 3}
+      propertyPath: GameOverWindowViewPrefab
+      value: 
+      objectReference: {fileID: 6775101754610853528, guid: 6411ad24e2c86e243910b8cff5537b20,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62242f1a4d6e9bc42afa012a5f7bf7cc, type: 3}
 --- !u!1 &5730649931683371402 stripped

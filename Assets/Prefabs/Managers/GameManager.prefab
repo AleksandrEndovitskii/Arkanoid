@@ -88,6 +88,8 @@ MonoBehaviour:
   UserInterfaceCanvas: {fileID: 0}
   UserInterfaceViewPrefab: {fileID: 4660584369592988944, guid: fd0066ca9192aab47b3a2b8d14800a3b,
     type: 3}
+  GameOverWindowViewPrefab: {fileID: 6775101754610853528, guid: 6411ad24e2c86e243910b8cff5537b20,
+    type: 3}
 --- !u!114 &219906263611629875
 MonoBehaviour:
   m_ObjectHideFlags: 0

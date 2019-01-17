@@ -27,8 +27,8 @@ namespace Managers
         {
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
-            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 4f, 0));
-            _brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _bricksContainerInstance.transform);
+            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer);
+            _brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _bricksContainerInstance.transform, new Vector3(0, 4f, 0));
 
             _racketViewInstance = InstantiateElement<RacketView>(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
 

@@ -14,12 +14,15 @@ namespace Managers
         public Canvas UserInterfaceCanvas;
 
         public UserInterfaceView UserInterfaceViewPrefab;
+        public GameOverWindowView GameOverWindowViewPrefab;
 
         private UserInterfaceView _userInterfaceViewInstance;
+        private GameOverWindowView _gameOverWindowViewInstance;
 
         public void Initialize()
         {
             _userInterfaceViewInstance = InstantiateElement<UserInterfaceView>(UserInterfaceViewPrefab, UserInterfaceCanvas.transform);
+            //_gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, UserInterfaceCanvas.transform);
         }
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour, IInitializable
