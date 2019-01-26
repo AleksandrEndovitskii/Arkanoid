@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 54042721833283212}
   - component: {fileID: 8109648215296341749}
   - component: {fileID: 114196323164399432}
+  - component: {fileID: 4775867603165669983}
   m_Layer: 0
   m_Name: Racket
   m_TagString: Untagged
@@ -159,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fb7d8c7371bb0047b3bb86d250695a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4775867603165669983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773085586098734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a764469bfbdba948ab85588ccdbfc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
