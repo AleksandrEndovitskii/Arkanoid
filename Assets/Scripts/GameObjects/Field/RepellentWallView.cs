@@ -8,7 +8,7 @@ namespace GameObjects.Field
     {
         public void ReactOnCollisionEnter(BallView ballView)
         {
-            ballView.BounceInOppositeDirection();
+            //
         }
     }
 }

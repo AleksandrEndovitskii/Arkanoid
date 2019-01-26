@@ -7,7 +7,7 @@ namespace GameObjects.Racket
     {
         public void ReactOnCollisionEnter(BallView ballView)
         {
-            ballView.BounceInOppositeDirection();
+            //
         }
     }
 }
