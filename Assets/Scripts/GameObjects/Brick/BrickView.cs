@@ -1,9 +1,10 @@
-﻿using Managers;
+﻿using GameObjects.Ball;
+using Managers;
 using UnityEngine;
 
 namespace GameObjects.Brick
 {
-    public class BrickView : MonoBehaviour
+    public class BrickView : MonoBehaviour, IBallOnCollisionEnterReactor
     {
         public BrickType BrickType;
         public Color BrickColor;
@@ -35,6 +36,11 @@ namespace GameObjects.Brick
             Health = _initialHealth;
             BrickColor = GameManager.Instance.BrickColorManager.GetColorForBrickType(BrickType);
             this.gameObject.GetComponent<Renderer>().material.color = BrickColor;
+        }
+
+        public void ReactOnCollisionEnter(BallView ballView)
+        {
+            Health--;
         }
     }
 }
