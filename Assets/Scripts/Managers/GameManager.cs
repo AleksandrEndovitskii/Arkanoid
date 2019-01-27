@@ -55,6 +55,11 @@ namespace Managers
             get { return this.gameObject.GetComponent<BrickHealthManager>(); }
         }
 
+        public BrickColorManager BrickColorManager
+        {
+            get { return this.gameObject.GetComponent<BrickColorManager>(); }
+        }
+
         public ScoreManager ScoreManager
         {
             get { return this.gameObject.GetComponent<ScoreManager>(); }
@@ -88,6 +93,7 @@ namespace Managers
             TimeManager.Initialize();
             BrickMovementManager.Initialize();
             BrickHealthManager.Initialize();
+            BrickColorManager.Initialize();
             ScoreManager.Initialize();
         }
 
@@ -99,6 +105,7 @@ namespace Managers
             TimeManager.Uninitialize();
             BrickMovementManager.Uninitialize();
             BrickHealthManager.Uninitialize();
+            BrickColorManager.Initialize();
             ScoreManager.Uninitialize();
         }
     }

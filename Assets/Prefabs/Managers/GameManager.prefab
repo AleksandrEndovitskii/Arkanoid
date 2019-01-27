@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5231317017847866611}
   - component: {fileID: 5644873087216206018}
   - component: {fileID: 1000577929258581653}
+  - component: {fileID: 4553356194533000604}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,8 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameObjectsContainer: {fileID: 0}
   BricksContainerPrefab: {fileID: 8643421076966481147, guid: 4c6b87fd9589bf0468a2aeff9755d1ab,
-    type: 3}
-  BricksRowContainerPrefab: {fileID: 7659035898866407258, guid: 8fcab10f4de37d343a520732b8506592,
     type: 3}
   FieldViewPrefab: {fileID: 114062616049703276, guid: 09ec1ce5607aaeb4db5073d926f80c57,
     type: 3}
@@ -156,6 +155,8 @@ MonoBehaviour:
     Health: 6
   - BrickType: 6
     Health: 7
+  - BrickType: 7
+    Health: 8
 --- !u!114 &1000577929258581653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,3 +169,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133bff3f59532654394470ce7f9a7056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4553356194533000604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324678135730088090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb996fc81ac4e21a42f6ab8e4f5bc3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrickTypesColors:
+  - BrickType: 0
+    Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+  - BrickType: 1
+    Color: {r: 1, g: 1, b: 1, a: 1}
+  - BrickType: 2
+    Color: {r: 0, g: 1, b: 0, a: 1}
+  - BrickType: 3
+    Color: {r: 0, g: 0, b: 1, a: 1}
+  - BrickType: 4
+    Color: {r: 1, g: 0, b: 1, a: 1}
+  - BrickType: 5
+    Color: {r: 1, g: 0.64705884, b: 0, a: 1}
+  - BrickType: 6
+    Color: {r: 1, g: 1, b: 0, a: 1}
+  - BrickType: 7
+    Color: {r: 0, g: 1, b: 1, a: 1}

@@ -2,6 +2,7 @@
 {
     public enum BrickType
     {
+        Poor,
         Common,
         Uncommon,
         Rare,

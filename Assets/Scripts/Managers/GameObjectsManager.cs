@@ -20,6 +20,9 @@ namespace Managers
         public RacketView RacketViewPrefab;
         public BallView BallViewPrefab;
 
+        [SerializeField]
+        private int bricksCountPerType = 10;
+
         private BricksContainerView _bricksContainerInstance;
         private FieldView _fieldViewInstance;
         private List<BrickView> _brickViewInstances = new List<BrickView>();
@@ -28,17 +31,16 @@ namespace Managers
 
         public void Initialize()
         {
-            var bricksCountPerType = 10;
-
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
             _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 2.5f, 0));
             var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().ToList();
-            for (var i = 0; i < brickTypes.Count; i++)
+            foreach (var brickType in brickTypes)
             {
                 for (var j = 0; j < bricksCountPerType; j++)
                 {
                     var brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _bricksContainerInstance.transform);
+                    brickViewInstance.Initialize(brickType);
                     _brickViewInstances.Add(brickViewInstance);
                 } 
             }

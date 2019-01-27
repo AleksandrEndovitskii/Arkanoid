@@ -6,6 +6,7 @@ namespace GameObjects.Brick
     public class BrickView : MonoBehaviour
     {
         public BrickType BrickType;
+        public Color BrickColor;
 
         public int Health
         {
@@ -32,6 +33,8 @@ namespace GameObjects.Brick
             BrickType = brickType;
             _initialHealth = GameManager.Instance.BrickHealthManager.GetHealthForBrickType(BrickType);
             Health = _initialHealth;
+            BrickColor = GameManager.Instance.BrickColorManager.GetColorForBrickType(BrickType);
+            this.gameObject.GetComponent<Renderer>().material.color = BrickColor;
         }
     }
 }
