@@ -65,6 +65,8 @@ MonoBehaviour:
   GameObjectsContainer: {fileID: 0}
   BricksContainerPrefab: {fileID: 8643421076966481147, guid: 4c6b87fd9589bf0468a2aeff9755d1ab,
     type: 3}
+  BricksRowContainerPrefab: {fileID: 7659035898866407258, guid: 8fcab10f4de37d343a520732b8506592,
+    type: 3}
   FieldViewPrefab: {fileID: 114062616049703276, guid: 09ec1ce5607aaeb4db5073d926f80c57,
     type: 3}
   BrickViewPrefab: {fileID: 3262898704641736236, guid: 089c39c78322a5f4abb4c8aa1b67ed20,
