@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using GameObjects.Ball;
 using GameObjects.Brick;
@@ -12,6 +13,8 @@ namespace Managers
 {
     public class GameObjectsManager : MonoBehaviour, IInitializable, IUninitializable
     {
+        public event Action AllBrickViewInstancesWasDestroyed = delegate { };
+
         public Transform GameObjectsContainer;
 
         public BricksContainerView BricksContainerPrefab;
@@ -25,12 +28,14 @@ namespace Managers
 
         private BricksContainerView _bricksContainerInstance;
         private FieldView _fieldViewInstance;
-        private List<BrickView> _brickViewInstances = new List<BrickView>();
+        private ObservableCollection<BrickView> _brickViewInstances = new ObservableCollection<BrickView>();
         private RacketView _racketViewInstance;
         private BallView _ballViewInstance;
 
         public void Initialize()
         {
+            _brickViewInstances.CollectionChanged += BrickViewInstancesOnCollectionChanged;
+
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
             _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 2.5f, 0));
@@ -41,6 +46,8 @@ namespace Managers
                 {
                     var brickViewInstance = InstantiateElement<BrickView>(BrickViewPrefab, _bricksContainerInstance.transform);
                     brickViewInstance.Initialize(brickType);
+                    brickViewInstance.WasDestroyed += BrickViewInstanceOnWasDestroyed;
+
                     _brickViewInstances.Add(brickViewInstance);
                 } 
             }
@@ -52,7 +59,27 @@ namespace Managers
 
         public void Uninitialize()
         {
-            //
+            foreach (var brickViewInstance in _brickViewInstances)
+            {
+                brickViewInstance.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
+            }
+
+            _brickViewInstances.CollectionChanged -= BrickViewInstancesOnCollectionChanged;
+        }
+
+        private void BrickViewInstanceOnWasDestroyed(BrickView brickView)
+        {
+            brickView.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
+
+            _brickViewInstances.Remove(brickView);
+        }
+
+        private void BrickViewInstancesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (_brickViewInstances.Count == 0)
+            {
+                AllBrickViewInstancesWasDestroyed.Invoke();
+            }
         }
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour

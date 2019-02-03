@@ -1,4 +1,5 @@
-﻿using GameObjects.Ball;
+﻿using System;
+using GameObjects.Ball;
 using Managers;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace GameObjects.Brick
 {
     public class BrickView : MonoBehaviour, IBallOnCollisionEnterReactor
     {
+        public event Action<BrickView> WasDestroyed = delegate { };
+
         public BrickType BrickType;
         public Color BrickColor;
 
@@ -22,6 +25,8 @@ namespace GameObjects.Brick
                 if (_health <= 0)
                 {
                     Destroy(this.gameObject);
+
+                    WasDestroyed.Invoke(this);
                 }
             }
         }

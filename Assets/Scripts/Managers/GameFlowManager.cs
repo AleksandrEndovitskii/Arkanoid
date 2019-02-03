@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using Utilities;
 
-/*
-если все кирпичи уничтожены, игра считается выигранной;
- */
-
 namespace Managers
 {
     public class GameFlowManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public void Initialize()
         {
-            //
+            GameManager.Instance.GameObjectsManager.AllBrickViewInstancesWasDestroyed += GameObjectsManagerOnAllBrickViewInstancesWasDestroyed;
         }
 
         public void Uninitialize()
         {
-            //
+            GameManager.Instance.GameObjectsManager.AllBrickViewInstancesWasDestroyed -= GameObjectsManagerOnAllBrickViewInstancesWasDestroyed;
         }
 
         public void GameWon()
@@ -27,6 +23,11 @@ namespace Managers
         public void GameLost()
         {
             //
+        }
+
+        private void GameObjectsManagerOnAllBrickViewInstancesWasDestroyed()
+        {
+            GameWon();
         }
     }
 }
