@@ -39,7 +39,7 @@ namespace Managers
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
 
             _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 2.5f, 0));
-            var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().ToList();
+            var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().Reverse();
             foreach (var brickType in brickTypes)
             {
                 for (var j = 0; j < bricksCountPerType; j++)
