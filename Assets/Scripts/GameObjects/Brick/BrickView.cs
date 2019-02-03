@@ -43,7 +43,7 @@ namespace GameObjects.Brick
             _initialHealth = GameManager.Instance.BrickHealthManager.GetHealthForBrickType(BrickType);
             Health = _initialHealth;
             BrickColor = GameManager.Instance.BrickColorManager.GetColorForBrickType(BrickType);
-            Score = (int)BrickType;
+            Score = (int)BrickType + 1;
             this.gameObject.GetComponent<Renderer>().material.color = BrickColor;
         }
 
