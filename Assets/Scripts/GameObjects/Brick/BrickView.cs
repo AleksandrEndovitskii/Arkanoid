@@ -11,6 +11,7 @@ namespace GameObjects.Brick
 
         public BrickType BrickType;
         public Color BrickColor;
+        public int Score;
 
         public int Health
         {
@@ -26,6 +27,8 @@ namespace GameObjects.Brick
                 {
                     Destroy(this.gameObject);
 
+                    GameManager.Instance.ScoreManager.Score += Score;
+
                     WasDestroyed.Invoke(this);
                 }
             }
@@ -40,6 +43,7 @@ namespace GameObjects.Brick
             _initialHealth = GameManager.Instance.BrickHealthManager.GetHealthForBrickType(BrickType);
             Health = _initialHealth;
             BrickColor = GameManager.Instance.BrickColorManager.GetColorForBrickType(BrickType);
+            Score = (int)BrickType;
             this.gameObject.GetComponent<Renderer>().material.color = BrickColor;
         }
 
