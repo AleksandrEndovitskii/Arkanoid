@@ -189,7 +189,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1558843963882773932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6775101754610853528}
+        m_MethodName: OnRestartGameButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5014919077451393141
@@ -508,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8ed141a7635614ab9028e8cd7822bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameOverTextMeshProUgui: {fileID: 294282490589101239}
 --- !u!1 &8405238108192721220
 GameObject:
   m_ObjectHideFlags: 0

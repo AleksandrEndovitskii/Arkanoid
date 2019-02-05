@@ -2,11 +2,6 @@
 using UserInterface;
 using Utilities;
 
-/*
-UI:
-    По окончанию игры должно выводится окно с результатами(Выиграл/Проиграл и кнопка рестарта)
- */
-
 namespace Managers
 {
     public class UserInterfaceManager : MonoBehaviour, IInitializable, IUninitializable
@@ -22,12 +17,21 @@ namespace Managers
         public void Initialize()
         {
             _userInterfaceViewInstance = InstantiateElement<UserInterfaceView>(UserInterfaceViewPrefab, UserInterfaceCanvas.transform);
-            //_gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, UserInterfaceCanvas.transform);
+
+            GameManager.Instance.GameFlowManager.CurrentGameStatusChanged += CurrentGameFlowManagerOnCurrentGameStatusChanged;
+        }
+
+        private void CurrentGameFlowManagerOnCurrentGameStatusChanged(GameFlowManager.GameStatus gameStatus)
+        {
+            _gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, UserInterfaceCanvas.transform);
         }
 
         public void Uninitialize()
         {
-            //
+            Destroy(_userInterfaceViewInstance.gameObject);
+            _userInterfaceViewInstance = null;
+
+            GameManager.Instance.GameFlowManager.CurrentGameStatusChanged -= CurrentGameFlowManagerOnCurrentGameStatusChanged;
         }
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour, IInitializable
