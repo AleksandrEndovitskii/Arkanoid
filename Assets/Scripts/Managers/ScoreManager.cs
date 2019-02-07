@@ -25,7 +25,7 @@ namespace Managers
 
         public void Initialize()
         {
-            //
+            Score = 0;
         }
 
         public void Uninitialize()

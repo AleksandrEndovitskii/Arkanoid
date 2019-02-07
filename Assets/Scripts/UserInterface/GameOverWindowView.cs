@@ -38,6 +38,7 @@ namespace UserInterface
         public void OnRestartGameButtonClick()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //GameManager.Instance.Reinitialize();
         }
     }
 }

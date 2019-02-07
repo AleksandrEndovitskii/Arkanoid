@@ -14,7 +14,7 @@ namespace Managers
 
         public void Uninitialize()
         {
-            //
+            GameManager.Instance.TimeManager.SecondsPassedCountChanged -= TimeManagerOnSecondsPassedCountChanged;
         }
 
         private void TimeManagerOnSecondsPassedCountChanged(int secondsPassedCount)

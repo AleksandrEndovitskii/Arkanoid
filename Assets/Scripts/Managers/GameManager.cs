@@ -71,18 +71,20 @@ namespace Managers
             {
                 Instance = this;
 
-                DontDestroyOnLoad(gameObject); // sets this to not be destroyed when reloading scene 
+                DontDestroyOnLoad(this.gameObject); // sets this to not be destroyed when reloading scene 
             }
             else
             {
                 if (Instance != this)
                 {
+                    Instance.Uninitialize();
+
                     // this enforces our singleton pattern, meaning there can only ever be one instance of a GameManager 
-                    Destroy(gameObject);
+                    Destroy(this.gameObject);
                 }
             }
 
-            Initialize();
+            Instance.Initialize();
         }
 
         public void Initialize()
@@ -105,8 +107,14 @@ namespace Managers
             TimeManager.Uninitialize();
             BrickMovementManager.Uninitialize();
             BrickHealthManager.Uninitialize();
-            BrickColorManager.Initialize();
+            BrickColorManager.Uninitialize();
             ScoreManager.Uninitialize();
+        }
+
+        public void Reinitialize()
+        {
+            Uninitialize();
+            Initialize();
         }
     }
 }

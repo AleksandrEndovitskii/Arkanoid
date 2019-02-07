@@ -24,14 +24,22 @@ namespace Managers
             }
         }
 
+        private Coroutine _stopwatchCoroutine;
+
         public void Initialize()
         {
-            StartCoroutine(Stopwatch());
+            SecondsPassedCount = 0;
+
+            _stopwatchCoroutine = StartCoroutine(Stopwatch());
         }
 
         public void Uninitialize()
         {
-            //
+            if (_stopwatchCoroutine != null)
+            {
+                StopCoroutine(_stopwatchCoroutine);
+                _stopwatchCoroutine = null;
+            }
         }
 
         private IEnumerator Stopwatch()

@@ -15,8 +15,7 @@ namespace Managers
     {
         public event Action AllBrickViewInstancesWasDestroyed = delegate { };
 
-        public Transform GameObjectsContainer;
-
+        public Transform GameObjectsContainerPrefab;
         public BricksContainerView BricksContainerPrefab;
         public FieldView FieldViewPrefab;
         public BrickView BrickViewPrefab;
@@ -26,6 +25,7 @@ namespace Managers
         [SerializeField]
         private int bricksCountPerType = 10;
 
+        private Transform _gameObjectsContainerInstance;
         private BricksContainerView _bricksContainerInstance;
         private FieldView _fieldViewInstance;
         private ObservableCollection<BrickView> _brickViewInstances = new ObservableCollection<BrickView>();
@@ -36,9 +36,11 @@ namespace Managers
         {
             _brickViewInstances.CollectionChanged += BrickViewInstancesOnCollectionChanged;
 
-            _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, GameObjectsContainer);
+            _gameObjectsContainerInstance = Instantiate(GameObjectsContainerPrefab);
 
-            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, GameObjectsContainer, new Vector3(0, 2.5f, 0));
+            _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, _gameObjectsContainerInstance);
+
+            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 2.5f, 0));
             var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().Reverse();
             foreach (var brickType in brickTypes)
             {
@@ -59,12 +61,42 @@ namespace Managers
 
         public void Uninitialize()
         {
+            _brickViewInstances.CollectionChanged -= BrickViewInstancesOnCollectionChanged;
+
+            if (_gameObjectsContainerInstance != null)
+            {
+                Destroy(_gameObjectsContainerInstance.gameObject);
+                _gameObjectsContainerInstance = null;
+            }
+
+            if (_fieldViewInstance != null)
+            {
+                Destroy(_fieldViewInstance.gameObject);
+                _fieldViewInstance = null;
+            }
+
+            if (_bricksContainerInstance != null)
+            {
+                Destroy(_bricksContainerInstance.gameObject);
+                _bricksContainerInstance = null;
+            }
+
             foreach (var brickViewInstance in _brickViewInstances)
             {
                 brickViewInstance.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
             }
 
-            _brickViewInstances.CollectionChanged -= BrickViewInstancesOnCollectionChanged;
+            if (_racketViewInstance != null)
+            {
+                Destroy(_racketViewInstance.gameObject);
+                _racketViewInstance = null;
+            }
+
+            if (_ballViewInstance != null)
+            {
+                Destroy(_ballViewInstance.gameObject);
+                _ballViewInstance = null;
+            }
         }
 
         private void BrickViewInstanceOnWasDestroyed(BrickView brickView)

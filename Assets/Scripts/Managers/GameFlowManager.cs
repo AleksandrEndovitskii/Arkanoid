@@ -23,6 +23,15 @@ namespace Managers
                 }
 
                 _currentGameStatus = value;
+
+                if (_currentGameStatus == GameStatus.Win ||
+                    _currentGameStatus == GameStatus.Los)
+                {
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+                    Time.timeScale = 0.0f;
+                }
+
                 CurrentGameStatusChanged.Invoke(_currentGameStatus);
             }
         }
@@ -30,6 +39,8 @@ namespace Managers
         public void Initialize()
         {
             CurrentGameStatus = GameStatus.InProgress;
+
+            Time.timeScale = 1.0f;
 
             GameManager.Instance.GameObjectsManager.AllBrickViewInstancesWasDestroyed += GameObjectsManagerOnAllBrickViewInstancesWasDestroyed;
         }

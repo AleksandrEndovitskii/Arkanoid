@@ -63,7 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a88b1df58f0ef46815f04715c06415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectsContainer: {fileID: 0}
+  GameObjectsContainerPrefab: {fileID: 6508788795111222009, guid: 672abf90ab64ef24181f7081121860fe,
+    type: 3}
   BricksContainerPrefab: {fileID: 8643421076966481147, guid: 4c6b87fd9589bf0468a2aeff9755d1ab,
     type: 3}
   FieldViewPrefab: {fileID: 114062616049703276, guid: 09ec1ce5607aaeb4db5073d926f80c57,
@@ -74,6 +75,7 @@ MonoBehaviour:
     type: 3}
   BallViewPrefab: {fileID: 114078603773449410, guid: 98a1b2527b481844b8afc3e6878e43d7,
     type: 3}
+  bricksCountPerType: 10
 --- !u!114 &5361834537064907592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,11 +88,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d354eb2c4da474987ac8bc0d055450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserInterfaceCanvas: {fileID: 0}
+  UserInterfaceCanvasPrefab: {fileID: 6323167212507311889, guid: 303a17778d119534d837fcd90c404960,
+    type: 3}
   UserInterfaceViewPrefab: {fileID: 4660584369592988944, guid: fd0066ca9192aab47b3a2b8d14800a3b,
     type: 3}
   GameOverWindowViewPrefab: {fileID: 6775101754610853528, guid: 6411ad24e2c86e243910b8cff5537b20,
     type: 3}
+  _userInterfaceCanvasInstance: {fileID: 0}
 --- !u!114 &219906263611629875
 MonoBehaviour:
   m_ObjectHideFlags: 0
