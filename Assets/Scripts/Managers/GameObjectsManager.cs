@@ -26,7 +26,7 @@ namespace Managers
         private int bricksCountPerType = 10;
 
         private Transform _gameObjectsContainerInstance;
-        private BricksContainerView _bricksContainerInstance;
+        public BricksContainerView _bricksContainerInstance;
         private FieldView _fieldViewInstance;
         private ObservableCollection<BrickView> _brickViewInstances = new ObservableCollection<BrickView>();
         private RacketView _racketViewInstance;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Utilities;
 
 namespace Managers
@@ -27,7 +28,11 @@ namespace Managers
 
         private void MoveBricks()
         {
-            //Каждые n секунд, кирпичи опускаются на одну ячейку вниз;
+            var oneCellHeight = GameManager.Instance.GameObjectsManager._bricksContainerInstance
+                .GetComponent<GridLayoutGroup>().cellSize.y;
+            var verticalMovementDirectionCoefficient = -1;
+            GameManager.Instance.GameObjectsManager._bricksContainerInstance.transform.position +=
+                new Vector3(0, verticalMovementDirectionCoefficient * oneCellHeight, 0);
         }
     }
 }
