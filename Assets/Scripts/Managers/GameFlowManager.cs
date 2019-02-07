@@ -25,7 +25,7 @@ namespace Managers
                 _currentGameStatus = value;
 
                 if (_currentGameStatus == GameStatus.Win ||
-                    _currentGameStatus == GameStatus.Los)
+                    _currentGameStatus == GameStatus.Loss)
                 {
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
@@ -57,7 +57,7 @@ namespace Managers
 
         public void GameLost()
         {
-            CurrentGameStatus = GameStatus.Los;
+            CurrentGameStatus = GameStatus.Loss;
         }
 
         private void GameObjectsManagerOnAllBrickViewInstancesWasDestroyed()
@@ -69,7 +69,7 @@ namespace Managers
         {
             InProgress,
             Win,
-            Los
+            Loss
         }
     }
 }

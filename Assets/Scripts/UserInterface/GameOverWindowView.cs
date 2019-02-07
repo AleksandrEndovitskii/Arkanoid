@@ -21,8 +21,8 @@ namespace UserInterface
                 case GameFlowManager.GameStatus.Win:
                     _gameOverTextMeshProUgui.text = GameFlowManager.GameStatus.Win.ToString();
                     break;
-                case GameFlowManager.GameStatus.Los:
-                    _gameOverTextMeshProUgui.text = GameFlowManager.GameStatus.Los.ToString();
+                case GameFlowManager.GameStatus.Loss:
+                    _gameOverTextMeshProUgui.text = GameFlowManager.GameStatus.Loss.ToString();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(GameManager.Instance.GameFlowManager.CurrentGameStatus),

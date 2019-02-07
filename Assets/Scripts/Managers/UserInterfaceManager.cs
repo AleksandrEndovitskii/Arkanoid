@@ -26,7 +26,7 @@ namespace Managers
         private void CurrentGameFlowManagerOnCurrentGameStatusChanged(GameFlowManager.GameStatus gameStatus)
         {
             if (gameStatus == GameFlowManager.GameStatus.Win ||
-                gameStatus == GameFlowManager.GameStatus.Los)
+                gameStatus == GameFlowManager.GameStatus.Loss)
             {
                 _gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, _userInterfaceCanvasInstance.transform);
             }
