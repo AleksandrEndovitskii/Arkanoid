@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace Managers
         private int bricksCountPerType = 10;
         [SerializeField]
         private bool _advantageousPositioningOfTargetBrick = true;
+        [SerializeField]
+        private bool _randomLevelGeneration = true;
 
         private Transform _gameObjectsContainerInstance;
         public BricksContainerView _bricksContainerInstance;
@@ -33,6 +36,8 @@ namespace Managers
         private ObservableCollection<BrickView> _brickViewInstances = new ObservableCollection<BrickView>();
         private RacketView _racketViewInstance;
         private BallView _ballViewInstance;
+
+        private List<BrickView> _brickViewInstancesForDestruction = new List<BrickView>();
 
         private static System.Random _random = new System.Random();
 
@@ -45,6 +50,7 @@ namespace Managers
             _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, _gameObjectsContainerInstance);
 
             _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 2.5f, 0));
+            _bricksContainerInstance.BrickPositioningCompleted += BricksContainerInstanceOnBrickPositioningCompleted;
             var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().Reverse();
             foreach (var brickType in brickTypes)
             {
@@ -56,6 +62,18 @@ namespace Managers
 
                     _brickViewInstances.Add(brickViewInstance);
                 } 
+            }
+
+            if (_randomLevelGeneration)
+            {
+                foreach (var brickViewInstance in _brickViewInstances)
+                {
+                    var destroyBrick = _random.Next(0, 2);
+                    if (destroyBrick > 0)
+                    {
+                        _brickViewInstancesForDestruction.Add(brickViewInstance);
+                    }
+                }
             }
 
             if (_advantageousPositioningOfTargetBrick)
@@ -116,6 +134,20 @@ namespace Managers
             {
                 Destroy(_gameObjectsContainerInstance.gameObject);
                 _gameObjectsContainerInstance = null;
+            }
+        }
+
+        private void BricksContainerInstanceOnBrickPositioningCompleted()
+        {
+            if (_randomLevelGeneration)
+            {
+                foreach (var brickViewInstance in _brickViewInstancesForDestruction)
+                {
+                    brickViewInstance.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
+                    Destroy(brickViewInstance.gameObject);
+                    _brickViewInstances.Remove(brickViewInstance);
+                }
+                _brickViewInstancesForDestruction.Clear();
             }
         }
 
