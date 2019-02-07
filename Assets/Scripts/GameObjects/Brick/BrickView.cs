@@ -1,5 +1,6 @@
 ﻿using System;
 using GameObjects.Ball;
+using GameObjects.Brick.Frame;
 using Managers;
 using UnityEngine;
 
@@ -25,17 +26,35 @@ namespace GameObjects.Brick
 
                 if (_health <= 0)
                 {
-                    Destroy(this.gameObject);
-
                     GameManager.Instance.ScoreManager.Score += Score;
 
                     WasDestroyed.Invoke(this);
+
+                    Destroy(this.gameObject);
                 }
             }
         }
 
+        public bool Targeted
+        {
+            get
+            {
+                return _targeted;
+            }
+            set
+            {
+                _targeted = value;
+
+                _frameView.gameObject.SetActive(_targeted);
+            }
+        }
+
+        [SerializeField]
+        private FrameView _frameView;
+
         private int _initialHealth;
         private int _health;
+        private bool _targeted;
 
         public void Initialize(BrickType brickType)
         {
@@ -45,6 +64,7 @@ namespace GameObjects.Brick
             BrickColor = GameManager.Instance.BrickColorManager.GetColorForBrickType(BrickType);
             Score = (int)BrickType + 1;
             this.gameObject.GetComponent<Renderer>().material.color = BrickColor;
+            Targeted = false;
         }
 
         public void ReactOnCollisionEnter(BallView ballView)
