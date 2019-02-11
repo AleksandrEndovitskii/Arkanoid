@@ -1,0 +1,70 @@
+ManifestFileVersion: 0
+CRC: 4092358623
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0f7f1a3537a168bae1770beeef2ffb2c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4551cdbf5c32c81c495a9eefaf65d79f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 045781d2da20b424391b4710778f8d77, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 07d3f1a4bf1545bf9c3468110085dfe0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5cb5f0a5e31bf0a48bb1c9f7eccdb671, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fb7d8c7371bb0047b3bb86d250695a4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ecbce61859d6ee441bbc7f80159f9afa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f26f8a8f7fe449da6a26712100489d7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6a764469bfbdba948ab85588ccdbfc61, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bc619d6c6c72d674d9c4435051cb68f8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7961076ef9aef0341b2c9f8a38bfbc71, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 92b719bfc266e0e4fbd78d40d2603b1a, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 134
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/GameObjects/Ball/Ball.prefab
+- Assets/Prefabs/GameObjects/Racket/Racket.prefab
+- Assets/Prefabs/GameObjects/Field/Field.prefab
+- Assets/Prefabs/GameObjects/Brick/Brick.prefab
+- Assets/Prefabs/GameObjects/Brick/BricksContainer.prefab
+Dependencies: []

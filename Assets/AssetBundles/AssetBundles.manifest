@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 4232566433
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: mainscene
+      Dependencies:
+        Dependency_0: managers
+    Info_1:
+      Name: userinterface
+      Dependencies: {}
+    Info_2:
+      Name: managers
+      Dependencies:
+        Dependency_0: userinterface
+        Dependency_1: gameobjects
+        Dependency_2: containers
+    Info_3:
+      Name: gameobjects
+      Dependencies: {}
+    Info_4:
+      Name: containers
+      Dependencies: {}

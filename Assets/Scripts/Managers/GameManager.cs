@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
 using Utilities;
 
-/*
-Бонусные задачи:
-    - AssetBundles
- */
-
 namespace Managers
 {
     [RequireComponent(typeof(UserInterfaceManager))]
