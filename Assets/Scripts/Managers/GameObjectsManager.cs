@@ -49,7 +49,7 @@ namespace Managers
 
             _fieldViewInstance = InstantiateElement(FieldViewPrefab, _gameObjectsContainerInstance);
 
-            _bricksContainerInstance = InstantiateElement(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 2.5f, 0));
+            _bricksContainerInstance = InstantiateElement(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 3.5f, 0));
             _bricksContainerInstance.BrickPositioningCompleted += BricksContainerInstanceOnBrickPositioningCompleted;
             var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().Reverse();
             foreach (var brickType in brickTypes)
@@ -87,7 +87,7 @@ namespace Managers
                 randomBrick.Targeted = true;
             }
 
-            _racketViewInstance = InstantiateElement(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4f, 0));
+            _racketViewInstance = InstantiateElement(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4.5f, 0));
 
             _ballViewInstance = InstantiateElement(BallViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -1f, 0));
         }
