@@ -50,19 +50,9 @@ namespace Managers
             GameManager.Instance.GameObjectsManager.AllBrickViewInstancesWasDestroyed -= GameObjectsManagerOnAllBrickViewInstancesWasDestroyed;
         }
 
-        public void GameWon()
-        {
-            CurrentGameStatus = GameStatus.Win;
-        }
-
-        public void GameLost()
-        {
-            CurrentGameStatus = GameStatus.Loss;
-        }
-
         private void GameObjectsManagerOnAllBrickViewInstancesWasDestroyed()
         {
-            GameWon();
+            CurrentGameStatus = GameStatus.Win;
         }
 
         public enum GameStatus

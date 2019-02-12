@@ -9,7 +9,7 @@ namespace GameObjects.Field
     {
         public void ReactOnCollisionEnter(BallView ballView)
         {
-            GameManager.Instance.GameFlowManager.GameLost();
+            GameManager.Instance.GameFlowManager.CurrentGameStatus = GameFlowManager.GameStatus.Loss;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Managers
         {
             _userInterfaceCanvasInstance = Instantiate(UserInterfaceCanvasPrefab);
 
-            _userInterfaceViewInstance = InstantiateElement<UserInterfaceView>(UserInterfaceViewPrefab, _userInterfaceCanvasInstance.transform);
+            _userInterfaceViewInstance = InstantiateElement(UserInterfaceViewPrefab, _userInterfaceCanvasInstance.transform);
 
             GameManager.Instance.GameFlowManager.CurrentGameStatusChanged += CurrentGameFlowManagerOnCurrentGameStatusChanged;
         }
@@ -28,7 +28,7 @@ namespace Managers
             if (gameStatus == GameFlowManager.GameStatus.Win ||
                 gameStatus == GameFlowManager.GameStatus.Loss)
             {
-                _gameOverWindowViewInstance = InstantiateElement<GameOverWindowView>(GameOverWindowViewPrefab, _userInterfaceCanvasInstance.transform);
+                _gameOverWindowViewInstance = InstantiateElement(GameOverWindowViewPrefab, _userInterfaceCanvasInstance.transform);
             }
         }
 

@@ -47,9 +47,9 @@ namespace Managers
 
             _gameObjectsContainerInstance = Instantiate(GameObjectsContainerPrefab);
 
-            _fieldViewInstance = InstantiateElement<FieldView>(FieldViewPrefab, _gameObjectsContainerInstance);
+            _fieldViewInstance = InstantiateElement(FieldViewPrefab, _gameObjectsContainerInstance);
 
-            _bricksContainerInstance = InstantiateElement<BricksContainerView>(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 2.5f, 0));
+            _bricksContainerInstance = InstantiateElement(BricksContainerPrefab, _gameObjectsContainerInstance, new Vector3(0, 2.5f, 0));
             _bricksContainerInstance.BrickPositioningCompleted += BricksContainerInstanceOnBrickPositioningCompleted;
             var brickTypes = Enum.GetValues(typeof(BrickType)).Cast<BrickType>().Reverse();
             foreach (var brickType in brickTypes)
@@ -87,9 +87,9 @@ namespace Managers
                 randomBrick.Targeted = true;
             }
 
-            _racketViewInstance = InstantiateElement<RacketView>(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4f, 0));
+            _racketViewInstance = InstantiateElement(RacketViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -4f, 0));
 
-            _ballViewInstance = InstantiateElement<BallView>(BallViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -1f, 0));
+            _ballViewInstance = InstantiateElement(BallViewPrefab, _fieldViewInstance.gameObject.transform, new Vector3(0, -1f, 0));
         }
 
         public void Uninitialize()
@@ -159,7 +159,7 @@ namespace Managers
 
             if (brickView.Targeted)
             {
-                GameManager.Instance.GameFlowManager.GameWon();
+                GameManager.Instance.GameFlowManager.CurrentGameStatus = GameFlowManager.GameStatus.Win;
             }
         }
 
