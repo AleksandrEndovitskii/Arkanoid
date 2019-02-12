@@ -7,16 +7,20 @@ namespace Managers
     public class UserInterfaceManager : MonoBehaviour, IInitializable, IUninitializable
     {
         public Canvas UserInterfaceCanvasPrefab;
+        public Canvas WindowsCanvasPrefab;
         public UserInterfaceView UserInterfaceViewPrefab;
         public GameOverWindowView GameOverWindowViewPrefab;
 
         private Canvas _userInterfaceCanvasInstance;
+        private Canvas _windowsCanvasInstance;
         private UserInterfaceView _userInterfaceViewInstance;
         private GameOverWindowView _gameOverWindowViewInstance;
 
         public void Initialize()
         {
             _userInterfaceCanvasInstance = Instantiate(UserInterfaceCanvasPrefab);
+
+            _windowsCanvasInstance = Instantiate(WindowsCanvasPrefab);
 
             _userInterfaceViewInstance = InstantiateElement(UserInterfaceViewPrefab, _userInterfaceCanvasInstance.transform);
 
@@ -28,7 +32,7 @@ namespace Managers
             if (gameStatus == GameFlowManager.GameStatus.Win ||
                 gameStatus == GameFlowManager.GameStatus.Loss)
             {
-                _gameOverWindowViewInstance = InstantiateElement(GameOverWindowViewPrefab, _userInterfaceCanvasInstance.transform);
+                _gameOverWindowViewInstance = InstantiateElement(GameOverWindowViewPrefab, _windowsCanvasInstance.transform);
             }
         }
 

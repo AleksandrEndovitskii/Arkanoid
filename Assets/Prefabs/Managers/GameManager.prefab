@@ -76,6 +76,9 @@ MonoBehaviour:
   BallViewPrefab: {fileID: 114078603773449410, guid: 98a1b2527b481844b8afc3e6878e43d7,
     type: 3}
   bricksCountPerType: 10
+  _advantageousPositioningOfTargetBrick: 1
+  _randomLevelGeneration: 1
+  _bricksContainerInstance: {fileID: 0}
 --- !u!114 &5361834537064907592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,11 +93,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UserInterfaceCanvasPrefab: {fileID: 6323167212507311889, guid: 303a17778d119534d837fcd90c404960,
     type: 3}
+  WindowsCanvasPrefab: {fileID: 6323167212507311889, guid: f07a911109f7f3543b23aae9228b0f65,
+    type: 3}
   UserInterfaceViewPrefab: {fileID: 4660584369592988944, guid: fd0066ca9192aab47b3a2b8d14800a3b,
     type: 3}
   GameOverWindowViewPrefab: {fileID: 6775101754610853528, guid: 6411ad24e2c86e243910b8cff5537b20,
     type: 3}
-  _userInterfaceCanvasInstance: {fileID: 0}
 --- !u!114 &219906263611629875
 MonoBehaviour:
   m_ObjectHideFlags: 0
