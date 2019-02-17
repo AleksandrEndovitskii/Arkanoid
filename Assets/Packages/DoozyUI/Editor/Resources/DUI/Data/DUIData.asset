@@ -53,6 +53,14 @@ MonoBehaviour:
         m_Target: 0
         speed: 2
         m_Value: 0
+    - categoryName: MainUI
+      itemNames:
+      - GameOverWindow
+      - MainMenu
+      isExpanded:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
     - categoryName: Uncategorized
       itemNames:
       - ~Element Name~
@@ -66,6 +74,7 @@ MonoBehaviour:
     - Example 2 - OrientationManager
     - Example 3 - Buttons
     - Example 4 - Simple UI
+    - MainUI
     - Uncategorized
   DatabaseUIButtons:
     categories:
@@ -107,6 +116,13 @@ MonoBehaviour:
         m_Target: 0
         speed: 2
         m_Value: 0
+    - categoryName: MainUI
+      itemNames:
+      - RestartGame
+      isExpanded:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
     - categoryName: Uncategorized
       itemNames:
       - ~Button Name~
@@ -120,6 +136,7 @@ MonoBehaviour:
     - Example 2 - OrientationManager
     - Example 3 - Buttons
     - Example 4 - Simple UI
+    - MainUI
     - Uncategorized
   DatabaseUICanvases:
   - MasterCanvas
