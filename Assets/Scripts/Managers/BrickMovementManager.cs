@@ -6,21 +6,19 @@ namespace Managers
 {
     public class BrickMovementManager : MonoBehaviour, IInitializable, IUninitializable
     {
-        public int SecondsPassedCountRequaredForBrickMovement = 10;
-
         public void Initialize()
         {
-            GameManager.Instance.TimeManager.SecondsPassedCountChanged += TimeManagerOnSecondsPassedCountChanged;
+            GameManager.Instance.CountdownManager.SecondsLeftCountChanged += CountdownManagerOnSecondsLeftCountChanged;
         }
 
         public void Uninitialize()
         {
-            GameManager.Instance.TimeManager.SecondsPassedCountChanged -= TimeManagerOnSecondsPassedCountChanged;
+            GameManager.Instance.CountdownManager.SecondsLeftCountChanged -= CountdownManagerOnSecondsLeftCountChanged;
         }
 
-        private void TimeManagerOnSecondsPassedCountChanged(int secondsPassedCount)
+        private void CountdownManagerOnSecondsLeftCountChanged(int secondsLeftCount)
         {
-            if (secondsPassedCount % SecondsPassedCountRequaredForBrickMovement == 0)
+            if (secondsLeftCount == 0)
             {
                 MoveBricks();
             }

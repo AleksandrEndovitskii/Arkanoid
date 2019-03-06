@@ -14,8 +14,8 @@ namespace UserInterface
             ScoreManagerOnScoreChanged(GameManager.Instance.ScoreManager.Score);
             GameManager.Instance.ScoreManager.ScoreChanged += ScoreManagerOnScoreChanged;
 
-            TimeManagerOnSecondsPassedCountChanged(GameManager.Instance.TimeManager.SecondsPassedCount);
-            GameManager.Instance.TimeManager.SecondsPassedCountChanged += TimeManagerOnSecondsPassedCountChanged;
+            TimeManagerOnSecondsLeftCountChanged(GameManager.Instance.CountdownManager.SecondsLeftCount);
+            GameManager.Instance.CountdownManager.SecondsLeftCountChanged += TimeManagerOnSecondsLeftCountChanged;
         }
 
         private void ScoreManagerOnScoreChanged(int score)
@@ -23,7 +23,7 @@ namespace UserInterface
             ScoreCounterView.TextMeshProUGUIText.text = score.ToString();
         }
 
-        private void TimeManagerOnSecondsPassedCountChanged(int secondsPassedCount)
+        private void TimeManagerOnSecondsLeftCountChanged(int secondsPassedCount)
         {
             SecondsBeforeNextBricksMovementTimerCounterView.TextMeshProUGUIText.text = secondsPassedCount.ToString();
         }

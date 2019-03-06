@@ -6,7 +6,7 @@ namespace Managers
     [RequireComponent(typeof(UserInterfaceManager))]
     [RequireComponent(typeof(GameObjectsManager))]
     [RequireComponent(typeof(GameFlowManager))]
-    [RequireComponent(typeof(TimeManager))]
+    [RequireComponent(typeof(CountdownManager))]
     [RequireComponent(typeof(BrickMovementManager))]
     [RequireComponent(typeof(BrickHealthManager))]
     [RequireComponent(typeof(ScoreManager))]
@@ -30,9 +30,9 @@ namespace Managers
             get { return this.gameObject.GetComponent<GameFlowManager>(); }
         }
 
-        public TimeManager TimeManager
+        public CountdownManager CountdownManager
         {
-            get { return this.gameObject.GetComponent<TimeManager>(); }
+            get { return this.gameObject.GetComponent<CountdownManager>(); }
         }
 
         public BrickMovementManager BrickMovementManager
@@ -82,7 +82,7 @@ namespace Managers
             UserInterfaceManager.Initialize();
             GameObjectsManager.Initialize();
             GameFlowManager.Initialize();
-            TimeManager.Initialize();
+            CountdownManager.Initialize();
             BrickMovementManager.Initialize();
             BrickHealthManager.Initialize();
             BrickColorManager.Initialize();
@@ -94,7 +94,7 @@ namespace Managers
             UserInterfaceManager.Uninitialize();
             GameObjectsManager.Uninitialize();
             GameFlowManager.Uninitialize();
-            TimeManager.Uninitialize();
+            CountdownManager.Uninitialize();
             BrickMovementManager.Uninitialize();
             BrickHealthManager.Uninitialize();
             BrickColorManager.Uninitialize();
