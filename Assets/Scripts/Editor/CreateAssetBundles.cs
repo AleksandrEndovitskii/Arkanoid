@@ -1,11 +1,10 @@
 ﻿using System.IO;
 using UnityEditor;
-using UnityEngine;
 
-public class CreateAssetBundles
+public class AssetBundles
 {
-    [MenuItem("Assets/Build AssetBundles")]
-    private static void BuildAllAssetBundles()
+    [MenuItem("AssetBundles/BuildAssetBundles")]
+    private static void BuildAssetBundles()
     {
         var assetBundleDirectory = "Assets/AssetBundles";
         if (!Directory.Exists(assetBundleDirectory))
@@ -17,4 +16,3 @@ public class CreateAssetBundles
             BuildTarget.StandaloneWindows);
     }
 }
-
