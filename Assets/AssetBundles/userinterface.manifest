@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3491373887
+CRC: 4059368683
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c498b3a113f00a0aca225d34e835265c
+    Hash: 75ba89e8d5ee770bd090b98bf977abe8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b8684e7ed2120cf9c8e06eeb23ea76b0
+    Hash: f319741dd74446874bdb61a1be3ffd8c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,11 +18,17 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 682849f091f20484485c3a8e6c1e0b1f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 0b8ed141a7635614ab9028e8cd7822bf, type: 3}
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -43,10 +49,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 222
   Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
 Assets:
-- Assets/Prefabs/UserInterface/GameOverWindow.prefab
+- Assets/Prefabs/UserInterface/UIE - GameOverWindow.prefab
 - Assets/Prefabs/UserInterface/UserInterface.prefab
 - Assets/Prefabs/UserInterface/Counter.prefab
 Dependencies: []
