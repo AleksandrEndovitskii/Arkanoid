@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2315243140
+CRC: 1853739256
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 11af08405bb044f8f9416b9bb0e5fcd1
+    Hash: a2ffebded9175334a99a675af465dfd3
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5a2ba1d6e04eda7a4149e208351322ea
+    Hash: 3ce2a886f835e3b5898a8ee202b76d8c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -123,6 +123,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 133bff3f59532654394470ce7f9a7056, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 92b719bfc266e0e4fbd78d40d2603b1a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eea08375da243a441b88d1e6b0713006, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 134
@@ -145,3 +147,4 @@ Assets:
 - Assets/Scenes/MainScene.unity
 Dependencies:
 - C:/Users/Malefic/Desktop/Arkanoid/Assets/AssetBundles/managers
+- C:/Users/Malefic/Desktop/Arkanoid/Assets/AssetBundles/gameobjects

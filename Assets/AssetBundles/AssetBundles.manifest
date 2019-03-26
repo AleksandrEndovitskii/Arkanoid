@@ -1,11 +1,12 @@
 ManifestFileVersion: 0
-CRC: 867689653
+CRC: 522140706
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: mainscene
       Dependencies:
         Dependency_0: managers
+        Dependency_1: gameobjects
     Info_1:
       Name: userinterface
       Dependencies: {}
