@@ -7,6 +7,7 @@ using GameObjects.Ball;
 using GameObjects.Brick;
 using GameObjects.Field;
 using GameObjects.Racket;
+using Lean.Pool;
 using UnityEngine;
 using Utilities;
 
@@ -101,7 +102,7 @@ namespace Managers
                 brickViewInstance.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
                 if (brickViewInstance != null)
                 {
-                    Destroy(brickViewInstance.gameObject);
+                    LeanPool.Despawn(brickViewInstance.gameObject);
                 }
             }
             _brickViewInstances.Clear();
@@ -144,7 +145,7 @@ namespace Managers
                 foreach (var brickViewInstance in _brickViewInstancesForDestruction)
                 {
                     brickViewInstance.WasDestroyed -= BrickViewInstanceOnWasDestroyed;
-                    Destroy(brickViewInstance.gameObject);
+                    LeanPool.Despawn(brickViewInstance.gameObject);
                     _brickViewInstances.Remove(brickViewInstance);
                 }
                 _brickViewInstancesForDestruction.Clear();
@@ -173,7 +174,7 @@ namespace Managers
 
         private T InstantiateElement<T>(T prefab, Transform parentContainer) where T : MonoBehaviour
         {
-            var instance = Instantiate(prefab);
+            var instance = LeanPool.Spawn(prefab);
 
             instance.gameObject.transform.SetParent(parentContainer);
 

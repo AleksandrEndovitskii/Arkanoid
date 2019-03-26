@@ -1,6 +1,7 @@
 ﻿using System;
 using GameObjects.Ball;
 using GameObjects.Brick.Frame;
+using Lean.Pool;
 using Managers;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ namespace GameObjects.Brick
 
                     WasDestroyed.Invoke(this);
 
-                    Destroy(this.gameObject);
+                    LeanPool.Despawn(this.gameObject);
                 }
             }
         }
